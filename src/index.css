@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-900: #064e3b;
+  --color-emerald-950: #022c22;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Prose overrides for blog detail */
+  .prose h2 { @apply text-2xl font-bold mt-8 mb-4; }
+  .prose h3 { @apply text-lg font-bold mt-6 mb-3; }
+  .prose p  { @apply mb-4 leading-relaxed; }
+  .prose ul { @apply space-y-1 mb-4 pl-4; }
+  .prose ol { @apply space-y-1 mb-4 pl-4; }
+  .prose li { @apply text-sm; }
+  .prose hr { @apply my-8; }
+  .prose strong { @apply font-semibold; }
+}
+
